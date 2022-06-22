@@ -276,7 +276,7 @@ postgresql:
   ## [FAQ] https://github.com/airflow-helm/charts/blob/main/charts/airflow/docs/faq/database/embedded-database.md
   ## [WARNING] the embedded Postgres is NOT SUITABLE for production deployments of Airflow
   ## [WARNING] consider using an external database with `externalDatabase.*`
-  enabled: true
+  enabled: false
 
   ## configs for the PVC of postgresql
   persistence:
@@ -287,15 +287,15 @@ postgresql:
 ###################################
 ## DATABASE | External Database
 ###################################
-# externalDatabase:
+externalDatabase:
 #   ## the type of external database
 #   ## [FAQ] https://github.com/airflow-helm/charts/blob/main/charts/airflow/docs/faq/database/external-database.md
-#   type: postgres
-#   host: postgres-service-airflow
-#   port: 5432
-#   database: postgres
-#   user: postgres
-#   password: password
+  type: postgres
+  host: postgres-service-airflow
+  port: 5432
+  database: postgres
+  user: postgres
+  password: password
 
 
 ###################################
