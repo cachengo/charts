@@ -276,7 +276,7 @@ postgresql:
   ## [FAQ] https://github.com/airflow-helm/charts/blob/main/charts/airflow/docs/faq/database/embedded-database.md
   ## [WARNING] the embedded Postgres is NOT SUITABLE for production deployments of Airflow
   ## [WARNING] consider using an external database with `externalDatabase.*`
-  enabled: false
+  enabled: true
 
   ## configs for the PVC of postgresql
   persistence:
@@ -287,15 +287,15 @@ postgresql:
 ###################################
 ## DATABASE | External Database
 ###################################
-externalDatabase:
-  ## the type of external database
-  ## [FAQ] https://github.com/airflow-helm/charts/blob/main/charts/airflow/docs/faq/database/external-database.md
-  type: postgres
-  host: postgres-service-airflow
-  port: 5432
-  database: postgres
-  user: postgres
-  password: password
+# externalDatabase:
+#   ## the type of external database
+#   ## [FAQ] https://github.com/airflow-helm/charts/blob/main/charts/airflow/docs/faq/database/external-database.md
+#   type: postgres
+#   host: postgres-service-airflow
+#   port: 5432
+#   database: postgres
+#   user: postgres
+#   password: password
 
 
 ###################################
@@ -303,12 +303,12 @@ externalDatabase:
 ###################################
 redis:
   ## if the `stable/redis` chart is used
-  enabled: false
+  enabled: true
 
 ###################################
 ## DATABASE | External Redis
 ###################################
-externalRedis:
-  ## the host of the external redis
-  ## [FAQ] https://github.com/airflow-helm/charts/blob/main/charts/airflow/docs/faq/database/external-redis.md
-  host: redis-server.redis-server
+# externalRedis:
+#   ## the host of the external redis
+#   ## [FAQ] https://github.com/airflow-helm/charts/blob/main/charts/airflow/docs/faq/database/external-redis.md
+#   host: redis-server.redis-server
