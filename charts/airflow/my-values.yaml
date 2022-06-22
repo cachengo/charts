@@ -13,7 +13,7 @@ airflow:
     pullPolicy: Always
 
   ## the airflow executor type to use
-  executor: CeleryExecutor
+  executor: KubernetesExecutor
 
   ## the fernet encryption key (sets `AIRFLOW__CORE__FERNET_KEY`)
   ## [FAQ] https://github.com/airflow-helm/charts/blob/main/charts/airflow/docs/faq/security/set-fernet-key.md
