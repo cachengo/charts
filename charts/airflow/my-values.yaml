@@ -303,7 +303,7 @@ postgresql:
 ###################################
 redis:
   ## if the `stable/redis` chart is used
-  enabled: true
+  enabled: false
 
 ###################################
 ## DATABASE | External Redis
