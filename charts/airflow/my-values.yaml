@@ -9,7 +9,7 @@ airflow:
   ## [FAQ] https://github.com/airflow-helm/charts/blob/main/charts/airflow/docs/faq/configuration/airflow-version.md
   image:
     repository: apache/airflow
-    tag: 2.3.2
+    tag: 2.3.3rc3
     pullPolicy: Always
 
   ## the airflow executor type to use
