@@ -30,7 +30,7 @@ airflow:
   config:
     AIRFLOW__WEBSERVER__EXPOSE_CONFIG: "False"
     AIRFLOW__CORE__LOAD_EXAMPLES: "False"
-    AIRFLOW__WEBSERVER__WORKERS: "1"
+
 
   ## a list of users to create
   ## [FAQ] https://github.com/airflow-helm/charts/blob/main/charts/airflow/docs/faq/security/airflow-users.md
@@ -160,6 +160,24 @@ web:
       AUTH_TYPE = AUTH_DB
     ## the name of a Secret containing a `webserver_config.py` key
     existingSecret: ""
+
+  ## configs for the web Pods' readiness probe
+  ##
+  readinessProbe:
+    enabled: true
+    initialDelaySeconds: 180
+    periodSeconds: 10
+    timeoutSeconds: 30
+    failureThreshold: 6
+
+  ## configs for the web Pods' liveness probe
+  ##
+  livenessProbe:
+    enabled: true
+    initialDelaySeconds: 180
+    periodSeconds: 10
+    timeoutSeconds: 30
+    failureThreshold: 6
 
 ###################################
 ## COMPONENT | Airflow Workers
