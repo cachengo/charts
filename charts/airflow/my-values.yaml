@@ -241,8 +241,15 @@ dags:
   ## configs for the git-sync sidecar
   ## [FAQ] https://github.com/airflow-helm/charts/blob/main/charts/airflow/docs/faq/dags/load-dag-definitions.md
   gitSync:
-    enabled: false
-
+    enabled: true
+    repo: ssh://git@github.com:betocolon23/Airflow-Dags.git"
+    branch: main
+    rev: HEAD
+    depth: 1
+    maxFailures: 0
+    subPath: "sql"
+    credentialsSecret: git-credentials
+    sshSecretKey: airflow-git-ssh-secret
 ###################################
 ## CONFIG | Kubernetes Ingress
 ###################################
